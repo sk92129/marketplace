@@ -51,7 +51,10 @@ public class BidController {
                       @Valid @RequestBody Bid bid) {
         return repoProject.findById(projectId).map(project -> {
             bid.setProject(project);
-            return repo.save(bid);
+
+            Bid bid1=  repo.save(bid);
+            project.addBid(bid1);
+            return bid1;
         }).orElseThrow(() -> new ProjectNotFoundException("ProjectId " + projectId + " not found"));
     }
 

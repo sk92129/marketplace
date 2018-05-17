@@ -1,13 +1,12 @@
 package com.seankang.persistence.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 
+import org.hibernate.annotations.JoinFormula;
 
 @Entity
 public class Project {
@@ -24,7 +23,25 @@ public class Project {
     private Integer maxBudget;
 
     @Column(nullable = false)
-    private Date lastBidDate;
+    private Date lastDate;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinFormula("(" +
+            "SELECT b.id " +
+            "FROM bid b " +
+            "WHERE b.id  = id " +
+           "ORDER BY b.date DESC " +
+            "LIMIT 1" +
+            ")")
+    private Bid lowestBid;
+
+    @OneToMany(
+            mappedBy = "project",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Bid> bids = new ArrayList<>();
+
 
     public Project() {
         super();
@@ -58,6 +75,16 @@ public class Project {
 
     public void setMaxBudget(Integer newbudget) {
         this.maxBudget = newbudget;
+    }
+
+    public void addBid(Bid bid) {
+        bids.add(bid);
+        bid.setProject(this);
+    }
+
+    public void removeBid(Bid bid) {
+        bids.remove(bid);
+        bid.setProject(null);
     }
 
     @Override
@@ -99,11 +126,30 @@ public class Project {
         return "Project [id=" + id + ", description=" + description + ", maxBudget=" + maxBudget + "]";
     }
 
-    public Date getLastBidDate() {
-        return lastBidDate;
+
+
+    public Bid getLowestBid() {
+        return lowestBid;
     }
 
-    public void setLastBidDate(Date lastBidDate) {
-        this.lastBidDate = lastBidDate;
+    public void setLowestBid(Bid lowestBid) {
+        this.lowestBid = lowestBid;
     }
+
+    public Date getLastDate() {
+        return lastDate;
+    }
+
+    public void setLastDate(Date lastDate) {
+        this.lastDate = lastDate;
+    }
+/*
+    public Integer getLowestBid() {
+        return lowestBid;
+    }
+
+    public void setLowestBid(Integer lowestBid) {
+        this.lowestBid = lowestBid;
+    }
+    */
 }
