@@ -2,8 +2,12 @@ package com.seankang.web;
 
 
 import com.seankang.persistence.model.Bid;
+import com.seankang.persistence.model.Project;
 import com.seankang.persistence.repo.BidRepository;
+
+import com.seankang.persistence.repo.ProjectRepository;
 import com.seankang.web.exception.BidNotFoundException;
+import com.seankang.web.exception.ProjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,22 +21,39 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+
+
+import javax.validation.Valid;
+
 @RestController
-@RequestMapping("/api/bids")
 public class BidController {
 
     @Autowired
     private BidRepository repo;
 
-    @GetMapping
-    public Iterable<Bid> findAll() {
-        return repo.findAll();
+    @Autowired
+    private ProjectRepository repoProject;
+
+    @GetMapping("/api/bids/{projectId}/bids")
+    public Page<Bid> findAll(  @PathVariable (value = "projectId") Long projectId,
+                               Pageable pageable) {
+        return repo.findByProjectId(projectId, pageable);
     }
 
 
-    @GetMapping("/{id}")
-    public Bid findOne(@PathVariable long id) {
-        return repo.findById(id)
-                .orElseThrow(BidNotFoundException::new);
+
+
+    @PostMapping("/api/bids/{projectId}/bids")
+    public Bid create(@PathVariable (value = "projectId") Long projectId,
+                      @Valid @RequestBody Bid bid) {
+        return repoProject.findById(projectId).map(project -> {
+            bid.setProject(project);
+            return repo.save(bid);
+        }).orElseThrow(() -> new ProjectNotFoundException("ProjectId " + projectId + " not found"));
     }
+
+
 }
