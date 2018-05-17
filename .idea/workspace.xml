@@ -18,8 +18,8 @@
       <file leaf-file-name="Project.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seankang/persistence/model/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+            <state relative-caret-position="89">
+              <caret line="31" column="79" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#775#776#0" expanded="true" />
@@ -353,7 +353,7 @@
       <option name="presentableId" value="Default" />
       <updated>1526363704823</updated>
       <workItem from="1526363706860" duration="3237000" />
-      <workItem from="1526449200859" duration="11747000" />
+      <workItem from="1526449200859" duration="12015000" />
     </task>
     <servers />
   </component>
@@ -369,7 +369,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14984000" />
+    <option name="totallyTimeSpent" value="15252000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="55" width="1322" height="769" extended-state="0" />
@@ -393,7 +393,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.65178573" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6041667" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28984374" />
@@ -706,8 +706,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seankang/persistence/model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        <state relative-caret-position="89">
+          <caret line="31" column="79" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#775#776#0" expanded="true" />
