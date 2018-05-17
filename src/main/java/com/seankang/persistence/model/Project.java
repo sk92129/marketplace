@@ -29,7 +29,7 @@ public class Project {
     @JoinFormula("(" +
             "SELECT b.id " +
             "FROM bid b " +
-            "WHERE b.id  = id " +
+            "WHERE b.project_id  = id " +
            "ORDER BY b.date DESC " +
             "LIMIT 1" +
             ")")

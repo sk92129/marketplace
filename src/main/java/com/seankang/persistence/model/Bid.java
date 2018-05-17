@@ -31,6 +31,17 @@ public class Bid {
     @Column(nullable = false)
     private Date date;
 
+    public Bid(){
+        super();
+    }
+
+    public Bid(long id, Integer bid, Date date) {
+        super();
+        this.id = id;
+        this.bid = bid;
+        this.date = date;
+    }
+
     public Integer getBid() {
         return bid;
     }
