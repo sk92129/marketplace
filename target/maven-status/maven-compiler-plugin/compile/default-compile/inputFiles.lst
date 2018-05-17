@@ -1,9 +1,0 @@
-/Users/sean/git/marketplace/src/main/java/com/seankang/web/exception/ProjectIdMismatchException.java
-/Users/sean/git/marketplace/src/main/java/com/seankang/web/RestExceptionHandler.java
-/Users/sean/git/marketplace/src/main/java/com/seankang/web/exception/ProjectNotFoundException.java
-/Users/sean/git/marketplace/src/main/java/com/seankang/web/ProjectController.java
-/Users/sean/git/marketplace/src/main/java/com/seankang/Application.java
-/Users/sean/git/marketplace/src/main/java/com/seankang/persistence/model/Project.java
-/Users/sean/git/marketplace/src/main/java/com/seankang/config/SecurityConfig.java
-/Users/sean/git/marketplace/src/main/java/com/seankang/web/SimpleController.java
-/Users/sean/git/marketplace/src/main/java/com/seankang/persistence/repo/ProjectRepository.java
