@@ -29,8 +29,8 @@ public class Project {
     @JoinFormula("(" +
             "SELECT b.id " +
             "FROM bid b " +
-            "WHERE b.project_id  = id " +
-           "ORDER BY b.date DESC " +
+            "WHERE b.project_id  = id and b.date < last_date " +
+           "ORDER BY b.bid ASC " +
             "LIMIT 1" +
             ")")
     private Bid lowestBid;
