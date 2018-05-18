@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "c825760e-829d-4098-a144-b3e19ae17ddc",
+		"name": "marketplace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET all projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8081/api/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST add project",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\" : \"Eat green eggs\",\n\t\"lastDate\": \"2018-01-01\",\n\t\"maxBudget\" : 2000\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST add bid",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"date\": \"2018-01-01\",\n\t\"bid\" : 200\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/bids/1/bids",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"bids",
+						"1",
+						"bids"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all bids per project",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8081/api/bids/1/bids",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"bids",
+						"1",
+						"bids"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET single project by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8081/api/projects/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"projects",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
